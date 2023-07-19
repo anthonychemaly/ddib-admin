@@ -38,7 +38,7 @@ async function deployContract() {
   return receipt.contractId;
 }
 
-async function callMintFunction(contractId, accountId) {
+async function callMintFunction(contractId, accountId, identity) {
   console.log("Initializing admin client...");
   client = await operator.initOperator();
 
@@ -49,15 +49,16 @@ async function callMintFunction(contractId, accountId) {
     .setFunction(
       "createIdentity",
       new hedera.ContractFunctionParameters()
-        .addString("A")
-        .addString("C")
-        .addUint256(1033682400)
-        .addString("C")
-        .addString("S")
-        .addString("D")
-        .addString("M")
-        .addString("S")
-        .addString("D")
+        .addString(identity?.firstName)
+        .addString(identity?.lastName)
+        .addUint256(identity?.dateOfBirth)
+        .addString(identity?.fatherName)
+        .addString(identity?.motherName)
+        .addString(identity?.placeOfBirth)
+        .addString(identity?.gender)
+        .addString(identity?.socialStatus)
+        .addString(identity?.city)
+        .addString(identity?.imgUrl)
         .addAddress("0x" + accountId.toSolidityAddress())
     )
     .execute(client);
@@ -89,6 +90,7 @@ async function callGetMyIdentityFunction(contractId, accountId, privateKey) {
   const gender = contractQuery.getString(6);
   const socialStatus = contractQuery.getString(7);
   const city = contractQuery.getString(8);
+  const imgUrl = contractQuery.getString(0);
 
   console.log("\n");
   console.log({
@@ -101,6 +103,7 @@ async function callGetMyIdentityFunction(contractId, accountId, privateKey) {
     gender,
     socialStatus,
     city,
+    imgUrl,
   });
   console.log("\n");
 }

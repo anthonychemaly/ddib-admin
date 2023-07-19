@@ -37,8 +37,8 @@
       ]
     },
     "/Users/anthony/Desktop/training-hands-on/contracts/SSID.sol": {
-      "lastModificationDate": 1689698550188,
-      "contentHash": "39c9acc69d5e9b1098d6d5936f97f4f4",
+      "lastModificationDate": 1689750790994,
+      "contentHash": "15e03965a89eb4b6ed9abdd6e706cb52",
       "sourceName": "contracts/SSID.sol",
       "solcConfig": {
         "version": "0.8.9",

@@ -16,6 +16,7 @@ contract SelfSovereignIdentity is ERC721, ERC721Enumerable, Ownable {
         string gender;
         string socialStatus;
         string city;
+        string imgUrl;
     }
 
     mapping(uint256 => Identity) private identities;
@@ -40,12 +41,26 @@ contract SelfSovereignIdentity is ERC721, ERC721Enumerable, Ownable {
         string memory _gender,
         string memory _socialStatus,
         string memory _city,
+        string memory _imgUrl,
         address _assignTo
     ) public onlyOwner {
         require(totalSupply() < 1, "Address already has an identity");
         require(bytes(_firstName).length > 0, "First name cannot be empty");
         require(bytes(_lastName).length > 0, "Last name cannot be empty");
         require(_dateOfBirth > 0, "Invalid date of birth");
+        require(bytes(_fatherName).length > 0, "Father name cannot be empty");
+        require(bytes(_motherName).length > 0, "Mother name cannot be empty");
+        require(
+            bytes(_placeOfBirth).length > 0,
+            "Place of birth cannot be empty"
+        );
+        require(bytes(_gender).length > 0, "Gender cannot be empty");
+        require(
+            bytes(_socialStatus).length > 0,
+            "Social status cannot be empty"
+        );
+        require(bytes(_city).length > 0, "City cannot be empty");
+        require(bytes(_imgUrl).length > 0, "Image cannot be empty");
         require(_assignTo != address(0), "Invalid assignee address");
 
         Identity memory newIdentity = Identity(
@@ -57,7 +72,8 @@ contract SelfSovereignIdentity is ERC721, ERC721Enumerable, Ownable {
             _placeOfBirth,
             _gender,
             _socialStatus,
-            _city
+            _city,
+            _imgUrl
         );
         identities[tokenIdCounter] = newIdentity;
 
@@ -77,7 +93,8 @@ contract SelfSovereignIdentity is ERC721, ERC721Enumerable, Ownable {
         string memory _placeOfBirth,
         string memory _gender,
         string memory _socialStatus,
-        string memory _city
+        string memory _city,
+        string memory _imgUrl
     ) public onlyOwner {
         require(bytes(_firstName).length > 0, "First name cannot be empty");
         require(bytes(_lastName).length > 0, "Last name cannot be empty");
@@ -94,6 +111,7 @@ contract SelfSovereignIdentity is ERC721, ERC721Enumerable, Ownable {
         existingIdentity.gender = _gender;
         existingIdentity.socialStatus = _socialStatus;
         existingIdentity.city = _city;
+        existingIdentity.imgUrl = _imgUrl;
     }
 
     function getIdentity(
@@ -106,6 +124,7 @@ contract SelfSovereignIdentity is ERC721, ERC721Enumerable, Ownable {
             string memory,
             string memory,
             uint256,
+            string memory,
             string memory,
             string memory,
             string memory,
@@ -126,7 +145,8 @@ contract SelfSovereignIdentity is ERC721, ERC721Enumerable, Ownable {
             identity.placeOfBirth,
             identity.gender,
             identity.socialStatus,
-            identity.city
+            identity.city,
+            identity.imgUrl
         );
     }
 
@@ -137,6 +157,7 @@ contract SelfSovereignIdentity is ERC721, ERC721Enumerable, Ownable {
             string memory,
             string memory,
             uint256,
+            string memory,
             string memory,
             string memory,
             string memory,
@@ -154,7 +175,7 @@ contract SelfSovereignIdentity is ERC721, ERC721Enumerable, Ownable {
         }
 
         // If no token is found for the caller, return empty values
-        return ("", "", 0, "", "", "", "", "", "");
+        return ("", "", 0, "", "", "", "", "", "", "");
     }
 
     function isAdult(uint256 _tokenId) public view returns (bool) {
