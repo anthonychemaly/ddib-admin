@@ -1,44 +1,9 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "/Users/anthony/Desktop/training-hands-on/contracts/HelloHedera.sol": {
-      "lastModificationDate": 1689234629039,
-      "contentHash": "93aa6c8fe1847be2031c5cb85129e6a4",
-      "sourceName": "contracts/HelloHedera.sol",
-      "solcConfig": {
-        "version": "0.8.9",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.9"
-      ],
-      "artifacts": [
-        "HelloHedera"
-      ]
-    },
     "/Users/anthony/Desktop/training-hands-on/contracts/SSID.sol": {
-      "lastModificationDate": 1689750790994,
-      "contentHash": "15e03965a89eb4b6ed9abdd6e706cb52",
+      "lastModificationDate": 1689763301069,
+      "contentHash": "a52bd5dd11535b16a189edbf39b886fd",
       "sourceName": "contracts/SSID.sol",
       "solcConfig": {
         "version": "0.8.9",

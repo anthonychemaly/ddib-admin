@@ -8,7 +8,7 @@ async function main() {
   const identity = {
     firstName: "Max",
     lastName: "Mustermann",
-    dateOfBirth: 1033682400, // Time in UNIX format
+    dateOfBirth: 1279536404, // Time in UNIX format
     fatherName: "John Mustermann",
     motherName: "Erika Mustermann",
     placeOfBirth: "Zürich",

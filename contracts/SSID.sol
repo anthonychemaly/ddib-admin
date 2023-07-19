@@ -178,10 +178,30 @@ contract SelfSovereignIdentity is ERC721, ERC721Enumerable, Ownable {
         return ("", "", 0, "", "", "", "", "", "", "");
     }
 
-    function isAdult(uint256 _tokenId) public view returns (bool) {
-        require(_exists(_tokenId), "Identity does not exist");
+    function getMyIdentityTokenId() public view returns (uint256) {
+        uint256 totalTokens = totalSupply();
 
-        Identity memory identity = identities[_tokenId];
+        for (uint256 tokenId = 0; tokenId < totalTokens; tokenId++) {
+            if (_exists(tokenId) && ownerOf(tokenId) == msg.sender) {
+                return tokenId;
+            }
+        }
+
+        // If no token is found for the caller, return empty values
+        return (0);
+    }
+
+    function isAdult(address _address) public view returns (bool) {
+        uint256 foundTokenId = 0;
+        uint256 totalTokens = totalSupply();
+
+        for (uint256 tokenId = 0; tokenId < totalTokens; tokenId++) {
+            if (_exists(tokenId) && ownerOf(tokenId) == _address) {
+                foundTokenId = tokenId;
+            }
+        }
+
+        Identity memory identity = identities[foundTokenId];
         uint256 age = calculateAge(identity.dateOfBirth);
 
         // Adjust the condition based on the legal adult age in your jurisdiction
