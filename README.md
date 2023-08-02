@@ -1,22 +1,57 @@
-Hello Students,
 
-We're thrilled to have you on board for our hands-on training session using the Hedera Hashgraph. Let's walk you through the steps to prepare for this enriching experience:
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 
-1. **Register at the Hedera Developer Portal:**
-Your first step is to create a student account on the Hedera portal. Simply visit [Hedera Portal](https://portal.hedera.com/) to do this. The portal will provide you with a range of resources, updates, and specialized tools to support your learning process on the Hedera platform.
 
-2. **Exploring Hedera Documentation:**
-Before diving into the code, it's important to understand the Hedera platform. You can access the comprehensive Hedera documentation at [Hedera Documentation](https://docs.hedera.com/hedera/). It will act as your guidebook, providing crucial insights into the platform's terminology, architecture, and various components.
 
-3. **Accessing GitHub Repository:**
-Our project codes are stored in a GitHub repository, available at [Swiss Digital Assets Institute GitHub Repository](https://github.com/Swiss-Digital-Assets-Institute/training-hands-on). We encourage you to clone or download this repository onto your local system to facilitate easy access and management of the code.
+# UZH Deep Dive into Blockchain: Admin Script
 
-Next, you'll need to decide how to access the code:
+This is the script responsible for the process of minting a Self Sovereign Identity by the government on the Hedera Hashgraph and assigning it to a created account.
 
-- **Option A: Coderbyte:** Coderbyte is a platform where we host our coding exercises and assignments. You can access it at [Coderbyte](https://hashgraph.coderbyte.com/sl-candidate?promo=thehashgraphassociation-w9cn2:javascript-assessment-fkm0jojyxv). Keep in mind that under heavy traffic, Coderbyte might experience some timeouts. If you encounter any such issues, wait for a few minutes and try again.
 
-- **Option B: IDE Setup:** If you prefer working in your favorite IDE, such as Visual Studio Code, feel free to clone or download our GitHub repository there.
+## Getting Started
 
-And with that, you're all set to start this exciting learning journey with us. We can't wait to see your progress and contributions.
+To run this project
 
-**Happy Learning!**
+```bash
+  node index.js
+```
+
+
+## Tech Stack
+
+**SDKs:** Hedera
+
+**Server:** Node
+
+**Smart Contract:** Solidity
+
+
+## Features
+- Soldity Self Sovereign Identity smart contract
+
+
+Leveraging the Hedera Hashgraph SDK, we have the following features:
+
+- Creating an account
+- Deploying a smart contract
+- Minting an identity
+- Fetching an identity
+
+## Acknowledgements
+
+ - [Hedera SDK Documentation](https://docs.hedera.com/hedera/sdks-and-apis/sdks)
+ - [Solidity Documentation](https://docs.soliditylang.org/en/)
+## Support
+
+For support, email anthonychemalygr@gmail.com.
+
+## 🔗 Links
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://anthonychemaly.com/)
+
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/anthonycchemaly)
+
+
+## Authors
+
+- [@anthonychemaly](https://www.github.com/anthonychemaly)
+
